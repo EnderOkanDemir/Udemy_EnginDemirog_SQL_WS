@@ -1,0 +1,15 @@
+SELECT *
+FROM Products
+ORDER BY UnitPrice DESC
+
+SELECT *
+FROM Products
+ORDER BY ProductName ASC
+
+SELECT *
+FROM Products
+ORDER BY UnitPrice, ProductName 
+
+SELECT *
+FROM Products
+ORDER BY UnitPrice ASC, ProductName DESC
