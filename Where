@@ -1,0 +1,15 @@
+SELECT *
+FROM Products
+WHERE CategoryID = 1
+
+SELECT * 
+FROM Products
+WHERE UnitsInStock > 20
+
+SELECT * 
+FROM Products
+WHERE UnitsInStock = 5+1
+
+SELECT * 
+FROM [Order Details]
+WHERE UnitPrice = 14 AND Quantity > 70
