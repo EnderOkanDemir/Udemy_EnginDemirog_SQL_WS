@@ -1,0 +1,19 @@
+SELECT *
+FROM Products
+WHERE ProductName = 'Chai'
+
+SELECT *
+FROM Products
+WHERE ProductName like 'Ch%'
+-- Starts with 'ch'
+
+SELECT *
+FROM Products
+WHERE ProductName like '%ing'
+-- Ends with 'ing'
+
+
+SELECT *
+FROM Products
+WHERE ProductName like '%ing%'
+-- Contains 'ing'
