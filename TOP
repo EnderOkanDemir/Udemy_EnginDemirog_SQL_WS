@@ -1,0 +1,6 @@
+SELECT TOP (3) ProductName
+FROM Products
+
+SELECT TOP (3) ProductName
+FROM Products
+WHERE UnitsInStock > 50 and ReorderLevel > 15
