@@ -1,0 +1,11 @@
+SELECT * 
+FROM Products
+WHERE UnitPrice BETWEEN 3 AND 5
+ORDER BY UnitPrice
+-- It returns only those with UnitPrice 3,4 and 5
+
+
+SELECT * 
+FROM Products
+WHERE CategoryID in (1,2,5,8)
+-- Returns only those whose CategoryID is equal to 1, 2, 5, or 8, i.e. those in parentheses
