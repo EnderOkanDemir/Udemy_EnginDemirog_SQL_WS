@@ -1,0 +1,221 @@
+Select COUNT (*) as UrunSayisi from Products
+
+Select COUNT (*) as [Ürün Sayısı] from Products
+
+Select COUNT (Region) from Customers
+
+Select * from Products where CategoryID in (1,2,5,8)
+-- Returns only those whose CategoryID is equal to 1, 2, 5 or 8, i.e. those in parentheses
+
+Select * from Products where CategoryID between 3 and 5
+-- It returns only those with CategoryIDs 3,4 and 5
+
+Select MIN(UnitPrice) from Products
+
+Select Max(UnitPrice) from Products
+
+Select Avg(UnitPrice) from Products
+
+Select Sum(UnitPrice) from [Order Details]
+Select Sum(UnitPrice) as Revenue from [Order Details]
+Select Sum(UnitPrice*Quantity) as Revenue from [Order Details]
+
+Select RAND()
+
+SELECT RAND() * 5 + 2;  -- Generating random numbers between 2 and 7 The right value 2 in the 5+2 operation is treated as the lower limit		
+SELECT RAND() * 2 + 5;  -- Generating random numbers between 5 and 7 The right value 5 in the 2+5 operation is treated as the lower limit
+
+
+Select LEFT('Ender Demir', 5)			Ender							
+											
+Select LEFT(ProductName,3) from Products											
+Ali									
+Ani									
+Bos									
+Cam									
+Car									
+											
+Select LEN('Hasan Fatih Yildirgan')				
+21							
+											
+Select ProductName, LEN(ProductName) as Karakter from Products											
+ProductName		Karakter							
+Alice Mutton		12							
+Anissed Syrup		13							
+											
+											
+Select LOWER('EnDeR')				ender							
+Select UPPER('EnDeR')				ENDER							
+											
+SELECT SUBSTRING('ender', 1, 1) AS first_letter						             	 e					
+SELECT SUBSTRING('ender', 1, 3) AS first_three_letter						        end					
+SELECT SUBSTRING('ender', 2, 3) AS first_three_letter						        nde					
+SELECT UPPER(SUBSTRING('ender', 2, 3)) AS first_three_letter						NDE					
+SELECT SUBSTRING(ProductName,3,6) from Products											
+											
+SELECT TRIM('    Ender Okan Demir')					                            	Ender Okan Demir					
+											
+Select * from Products where ProductName=TRIM('  Chai')											
+SELECT TRIM(ProductName) from Products where ProductName='Chai'					 	Chai			
+											
+Select * from Products where LEN(ProductName)>10											
+											
+Select LTRIM('  Fatih Yildirgan  ')						                          Fatih Yildirgan         					
+Select RTRIM('          Fatih Yildirgan  ')						                  Fatih Yildirgan					
+											
+Select REVERSE('Fatih Yildirgan')						                            nagridliY hitaF					
+											
+SELECT CHARINDEX('n', 'Engin Demiroğ',1)						
+-- It searches for 'n' in 'Engin Demiroğ' starting from the 1st character and returns the number of characters of 'n' The first 'n' it finds is the 2nd character because it returns	
+
+SELECT CHARINDEX('n', 'Engin Demiroğ',3)						
+-- It searches for 'n' in 'Engin Demiroğ' starting from the 3rd character and returns the number of characters of 'n'. The first 'n' it finds is the 5th character because it returns
+
+SELECT ProductName from Products where CHARINDEX(' ', ProductName,1)>0								
+- Retrieves product names that contain spaces in ProductName.
+
+SELECT TRIM('    Ender Okan Demir')											
+
+SELECT ProductName from Products where CHARINDEX('che', ProductName,1)>0											
+Chef Anton's Cajun Seasoning							
+Chef Anton's Gumbo Mix							
+Gumbär Gummibärchen							
+Queso Manchego La Pastora
+...
+											
+											
+SELECT REPLACE('Engin Demiroğ',' ','_')					Engin_Demiroğ		
+
+SELECT REPLACE(ProductName,' ','_') from Products	
+-- If there is a space, it replaces the underscore with '_'
+-- If there is no gap, it brings the existing one directly.
+Alice_Mutton						
+Aniseed_Syrup			Boşluk yoksa direk var olanı getiriyor.				
+Boston_Crab_Meat							
+Camembert_Pierrot							
+Carnarvon_Tigers							
+Chai							
+Chang							
+Chartreuse_verte
+...
+											
+											
+											
+SELECT Distinct(Country) from Customers order by Country desc							Seçilen kolondaki verileri unique olarak getirir	
+
+SELECT Distinct(OrderID) from [Order Details] order by OrderID desc			
+
+SELECT Distinct Country, City from Customers order by Country							Country ler ile şehir isimleri birlikte unique olur				
+				Argentina	Buenos Aires						
+				Austria	Graz						
+				Austria	Salzburg						
+				Belgium	Bruxelles						
+				Belgium	Charleroi						
+				Brazil	Campinas						
+				Brazil	Resende						
+				Brazil	Rio de Janeiro						
+											
+											
+SELECT Country from Customers group by Country											
+SELECT Country,Count(*) as Adet from Customers group by Country											
+SELECT Country, City, Count(*) as Adet from Customers group by Country, City											
+SELECT Country, City, Region, Count(*) as Adet from Customers group by Country, City, Region											group by' dan sonra hangi column ismini yazıyorsak select' ten sonra da o column ismini yazmalıyız
+											
+Select gruplamak istediğimiz kolonlar (sonuncusundan sonra virgül olmalı)											
+from gruplayacağımız kolonları içeren tablo ismi 											
+group by gruplamak istediğimiz kolonların ismi											
+											
+Select Country, City, Count(*) as Adet											
+from Customers											
+group by Country, City											
+having Count(*)>1  -- çağırdığımız sorgu sonucu oluşan tabloda filtreleme işlemi yapar											
+order by Country											
+				Country	City	Adet					
+				Argentina	Buenos Aires	3					
+				Brazil	Rio de Janeiro	3					
+				Brazil	Sao Paulo	4					
+				France	Nantes	2					
+				France	Paris	2					
+				Mexico	México D.F.	5					
+				Portugal	Lisboa	2					
+				Spain	Madrid	3					
+				UK	London	6					
+				USA	Portland	2					
+											
+											
+											
+Select Country, City, Count(*) as Adet											
+from Customers											
+where City != 'Nantes'  -- !=  yerine <> gösterimini de kullanabiliriz											
+group by Country, City											
+having Count(*)>1  -- çağırdığımız sorgu sonucfiltreleme işlemi yapar											
+order by Country											
+											
+											
+Select * 						Products ile Categories tablolarını Products'taki CategoryID ve Categories'teki CategoryID ortak kolonlarını kullanarak birleştir					
+from Products inner join Categories						Bu sorgu sonucunda Products ve Categories tablolarında bulunan CategoryID sindeki eşleşen yani her ikisinde de ortak bulunan veriler gelecektir					
+on Products.CategoryID = Categories.CategoryID											
+											
+from Products inner join Categories											
+on Products.CategoryID = Categories.CategoryID											
+where Products.UnitPrice > 20											
+order by Categories.CategoryID											
+											
+Select * 											
+from Products as P inner join Categories as C											
+on P.CategoryID = C.CategoryID											
+where P.UnitPrice > 20											
+order by C.CategoryID											
+											
+Select * 						NOT : ctrl + space ile tablo listesi açılıyor					
+from Products as P inner join [Order Details] as OD											
+on P.ProductID = OD.ProductID											
+inner join Orders as O											
+on O.OrderID = OD.OrderID											
+											
+											
+Select P.ProductName, O.OrderDate, OD.Quantity * OD.UnitPrice as TotalPrice									ProductName	OrderDate	TotalPrice
+from Products as P inner join [Order Details] as OD									Queso Cabrales	1996-07-04 00:00:00.000	168
+on P.ProductID = OD.ProductID									Singaporean Hokkien Fried Mee	1996-07-04 00:00:00.000	98
+inner join Orders as O									Mozzarella di Giovanni	1996-07-04 00:00:00.000	174
+on O.OrderID = OD.OrderID									Tofu	1996-07-05 00:00:00.000	167,4
+order by P.ProductName, O.OrderDate									Manjimup Dried Apples	1996-07-05 00:00:00.000	1696
+									Jack's New England Clam Chowder	1996-07-08 00:00:00.000	77
+									Manjimup Dried Apples	1996-07-08 00:00:00.000	1484
+									Louisiana Fiery Hot Pepper Sauce	1996-07-08 00:00:00.000	252
+									Gustaf's Knäckebröd	1996-07-08 00:00:00.000	100,8
+											
+											
+											
+											
+Select *							Products tablosunda olanlar ama Order Details tablosunda olmayanları çağırdık				
+from Products as P left join [Order Details] as OD							Satılmayan  ürünleri bulmaya  çalıştık ama satılmayan ürün yok.				
+on P.ProductID = OD.ProductID							Tablolar birleştirilirken eşleşmeyenler de gelir				
+where OD.ProductID is null							Eşleşmeyenlerin devamında NULL görünecektir				
+											
+Select * 											
+from Customers as C left join Orders O							Customers tablosunda olanlar ama Orders tablosunda olmayanları çağırdık				
+on C.CustomerID = O.CustomerID											
+where O.CustomerID is null							CustomerID	CompanyName	ContactName	ContactTitle	Address
+							FISSA	FISSA Fabrica Inter. Salchichas S.A.	Diego Roel	Accounting Manager	C/ Moralzarzal, 86
+							PARIS	Paris spécialités	Marie Bertrand	Owner	265, boulevard Charonne
+											
+											
+											
+Select * 											
+from Orders as O right join Customers as C							Customers tablosunda olanlar ama Orders tablosunda olmayanları çağırdık				
+on O.CustomerID = C.CustomerID											
+where O.CustomerID is null							OrderID	CustomerID	EmployeeID	OrderDate	RequiredDate
+							NULL	NULL	NULL	NULL	NULL
+							NULL	NULL	NULL	NULL	NULL
+											
+											
+Select C.ContactName, C.CustomerID											
+from Orders as O right join Customers as C											
+on O.CustomerID = C.CustomerID											
+where O.CustomerID is null											
+											
+											
+Select * 							Left join, right join ve inner joinin çıktısını kapsar				
+from Customers as C full join Orders as O											
+on O.CustomerID = C.CustomerID											
