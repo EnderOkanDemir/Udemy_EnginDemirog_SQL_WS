@@ -46,7 +46,7 @@ SELECT SUBSTRING('ender', 1, 1) AS first_letter						             	 e
 SELECT SUBSTRING('ender', 1, 3) AS first_three_letter						        end					
 SELECT SUBSTRING('ender', 2, 3) AS first_three_letter						        nde					
 SELECT UPPER(SUBSTRING('ender', 2, 3)) AS first_three_letter						NDE					
-SELECT SUBSTRING(ProductName,3,6) from Products											
+SELECT SUBSTRING(ProductName,3,6) from Products								???			
 											
 SELECT TRIM('    Ender Okan Demir')					                            	Ender Okan Demir					
 											
