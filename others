@@ -17,8 +17,8 @@ Select Sum(UnitPrice*Quantity) as Revenue from [Order Details]
 
 Select RAND()
 
-SELECT RAND() * 5 + 2;  -- Generating random numbers between 2 and 7 The right value 2 in the 5+2 operation is treated as the lower limit		
-SELECT RAND() * 2 + 5;  -- Generating random numbers between 5 and 7 The right value 5 in the 2+5 operation is treated as the lower limit
+SELECT RAND() * 5 + 2;  -- Generating random numbers between 2 and 7. The right value 2 in the 5+2 operation is treated as the lower limit		
+SELECT RAND() * 2 + 5;  -- Generating random numbers between 5 and 7. The right value 5 in the 2+5 operation is treated as the lower limit
 
 
 Select LEFT('Ender Demir', 5)			Ender							
