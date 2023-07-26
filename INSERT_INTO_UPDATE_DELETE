@@ -1,0 +1,21 @@
+INSERT INTO Categories (CategoryName,Description)
+VALUES ('Test Category', 'Test Category Description')
+-- to add data to the specific columns (e.g. CategoryName,Description) in Categories table 
+
+
+INSERT INTO [Order Details]
+VALUES (10248,13,13,13,0)
+
+
+UPDATE Territories set TerritoryDescription = 'EGE'
+WHERE TerritoryID = 01581
+
+
+UPDATE Categories set CategoryName = 'Test Category 2'
+WHERE CategoryID = 10
+-- Değiştireceğimiz CategoryName, Design - DataType ta belirtilern karakter sayısından fazla karakter içermemelidir. 
+-- Yoksa update çalışmayacaktır.
+
+
+DELETE FROM Categories
+WHERE CategoryID = 10
