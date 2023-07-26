@@ -1,0 +1,4 @@
+DELETE Customers
+FROM Customers INNER JOIN CustomerWorks		                -- DELTE ve JOIN yapmanın amacı iki tabloyu bir köpru üzerinden eşleştirip, belirli bir veriyi silebilmeyi sağlamaktır.
+ON Customers.CustomerID = CustomerWorks.CustomerID
+WHERE CustomerWorks.CompanyName LIKE '%Test%'
