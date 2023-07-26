@@ -1,0 +1,23 @@
+-- Tables - New - Table yolunu izleyerek yeni bir tablo ('CustomerWorks' adında) oluşturuyoruz.
+-- Yeni tabloya üzerinde çalışmak istediğimiz kolonları data type ları ile birlikte ekliyoruz.
+
+INSERT INTO CustomerWorks (CustomerID, CompanyName, ContactName)
+SELECT CustomerID, CompanyName, ContactName
+FROM Customers
+
+
+SELECT *
+FROM CustomerWorks
+
+
+DELETE FROM CustomerWorks
+-- Bu şekilde tablo içeriğini silebiliriz.
+-- DELET ' ten sonra * veya bir kolon ismi belirtmeye gerek yok
+-- DELETE FROM 'table' yapısı direkt çalışır.
+
+
+INSERT INTO CustomerWorks (CustomerID, CompanyName, ContactName)
+SELECT CustomerID, CompanyName, ContactName
+FROM Customers
+WHERE ContactName LIKE '%en%'
+-- Üzerinde çalışacağımız kolonlara sorguyu özelleştirerek de data çekebiliriz
