@@ -1,0 +1,26 @@
+SELECT * 
+FROM Customers
+
+SELECT * 
+FROM CustomerWorks
+
+-- Yukarıdaki iki sorgu sonucunu alt alta birleştirmek istersek kullanırız
+-- Birleştirme yapılabilmesi için her iki tablodaki kolon sayılarının eşit olması gerekir
+-- UNION kullanılırsa birleştirmede tekrar eden verilerden sadece biri alınır
+-- UNION ALL kullanılırsa birleştirmede tekrar eden veriler de alınır
+
+
+SELECT CustomerID,CompanyName,ContactName
+FROM Customers
+UNION
+SELECT * 
+FROM CustomerWorks
+-- 97 output
+
+
+SELECT CustomerID,CompanyName,ContactName
+FROM Customers
+UNION ALL
+SELECT * 
+FROM CustomerWorks
+-- 108 output
