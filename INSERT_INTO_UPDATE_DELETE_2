@@ -1,0 +1,10 @@
+-- Tables - New - Table yolunu izleyerek yeni bir tablo ('CustomerWorks' adında) oluşturuyoruz.
+-- Yeni tabloya üzerinde çalışmak istediğimiz kolonları data type ları ile birlikte ekliyoruz.
+
+INSERT INTO CustomerWorks (CustomerID, CompanyName, ContactName)
+SELECT CustomerID, CompanyName, ContactName
+FROM Customers
+
+
+SELECT *
+FROM CustomerWorks
