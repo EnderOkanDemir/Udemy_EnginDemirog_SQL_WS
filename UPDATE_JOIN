@@ -1,0 +1,4 @@
+UPDATE Customers SET CompanyName = CustomerWorks.CompanyName        -- Farklı tablolardaki aynı datalara ait güncellemeleri almak için kullanırız
+FROM Customers INNER JOIN CustomerWorks		                          -- JOIN yapmanın amacı iki tabloyu bir köpru üzerinden eşleştirip, belirli bir veriyi çağırıp veriyi güncellemeyi sağlamaktır.
+ON Customers.CustomerID = CustomerWorks.CustomerID
+WHERE CustomerWorks.CompanyName LIKE '%Test%'
