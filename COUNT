@@ -1,0 +1,5 @@
+Select COUNT (*) as UrunSayisi from Products
+
+Select COUNT (*) as [Ürün Sayısı] from Products
+
+Select COUNT (Region) from Customers
