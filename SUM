@@ -1,0 +1,5 @@
+Select Sum(UnitPrice) from [Order Details]
+
+Select Sum(UnitPrice) as Revenue from [Order Details]
+
+Select Sum(UnitPrice*Quantity) as Revenue from [Order Details]
