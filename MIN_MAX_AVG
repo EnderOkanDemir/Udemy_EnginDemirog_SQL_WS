@@ -1,0 +1,5 @@
+SELECT MIN(UnitPrice) from Products
+
+SELECT MAX(UnitPrice) from Products
+
+SELECT AVG(UnitPrice) from Products
