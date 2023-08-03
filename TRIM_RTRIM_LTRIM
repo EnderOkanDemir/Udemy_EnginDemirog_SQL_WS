@@ -1,0 +1,9 @@
+SELECT TRIM('    Ender Okan Demir')					                            	Ender Okan Demir					
+											
+Select * from Products where ProductName=TRIM('  Chai')											
+SELECT TRIM(ProductName) from Products where ProductName='Chai'					 	Chai			
+											
+Select * from Products where LEN(ProductName)>10											
+											
+Select LTRIM('  Fatih Yildirgan  ')						                          Fatih Yildirgan         					
+Select RTRIM('          Fatih Yildirgan  ')						                  Fatih Yildirgan
