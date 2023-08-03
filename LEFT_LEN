@@ -1,0 +1,16 @@
+Select LEFT('Ender Demir', 5)			Ender							
+											
+Select LEFT(ProductName,3) from Products											
+Ali									
+Ani									
+Bos									
+Cam									
+Car									
+											
+Select LEN('Hasan Fatih Yildirgan')				
+21							
+											
+Select ProductName, LEN(ProductName) as Karakter from Products											
+ProductName		Karakter							
+Alice Mutton		12							
+Anissed Syrup		13	
