@@ -1,11 +1,3 @@
-SELECT ProductName from Products where CHARINDEX('che', ProductName,1)>0											
-Chef Anton's Cajun Seasoning							
-Chef Anton's Gumbo Mix							
-Gumbär Gummibärchen							
-Queso Manchego La Pastora
-...
-											
-											
 SELECT REPLACE('Engin Demiroğ',' ','_')					Engin_Demiroğ		
 
 SELECT REPLACE(ProductName,' ','_') from Products	
