@@ -1,0 +1,25 @@
+Select Country, City, Count(*) as Adet											
+from Customers											
+group by Country, City											
+having Count(*)>1  -- çağırdığımız sorgu sonucu oluşan tabloda filtreleme işlemi yapar											
+order by Country											
+				Country	City	Adet					
+				Argentina	Buenos Aires	3					
+				Brazil	Rio de Janeiro	3					
+				Brazil	Sao Paulo	4					
+				France	Nantes	2					
+				France	Paris	2					
+				Mexico	México D.F.	5					
+				Portugal	Lisboa	2					
+				Spain	Madrid	3					
+				UK	London	6					
+				USA	Portland	2					
+											
+											
+											
+Select Country, City, Count(*) as Adet											
+from Customers											
+where City != 'Nantes'  -- !=  yerine <> gösterimini de kullanabiliriz											
+group by Country, City											
+having Count(*)>1  -- çağırdığımız sorgu sonucfiltreleme işlemi yapar											
+order by Country							
