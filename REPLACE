@@ -1,0 +1,14 @@
+SELECT REPLACE('Engin Demiroğ',' ','_')					Engin_Demiroğ		
+
+SELECT REPLACE(ProductName,' ','_') from Products	
+-- If there is a space, it replaces the underscore with '_'
+-- If there is no gap, it brings the existing one directly.
+Alice_Mutton						
+Aniseed_Syrup			Boşluk yoksa direk var olanı getiriyor.				
+Boston_Crab_Meat							
+Camembert_Pierrot							
+Carnarvon_Tigers							
+Chai							
+Chang							
+Chartreuse_verte
+...
