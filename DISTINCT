@@ -1,0 +1,14 @@
+											
+SELECT Distinct(Country) from Customers order by Country desc							Seçilen kolondaki verileri unique olarak getirir	
+
+SELECT Distinct(OrderID) from [Order Details] order by OrderID desc			
+
+SELECT Distinct Country, City from Customers order by Country							Country ler ile şehir isimleri birlikte unique olur				
+				Argentina	Buenos Aires						
+				Austria	Graz						
+				Austria	Salzburg						
+				Belgium	Bruxelles						
+				Belgium	Charleroi						
+				Brazil	Campinas						
+				Brazil	Resende						
+				Brazil	Rio de Janeiro		
