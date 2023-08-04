@@ -1,0 +1,8 @@
+SELECT Country from Customers group by Country											
+SELECT Country,Count(*) as Adet from Customers group by Country											
+SELECT Country, City, Count(*) as Adet from Customers group by Country, City											
+SELECT Country, City, Region, Count(*) as Adet from Customers group by Country, City, Region			group by' dan sonra hangi column ismini yazıyorsak select' ten sonra da o column ismini yazmalıyız
+											
+Select gruplamak istediğimiz kolonlar (sonuncusundan sonra virgül olmalı)											
+from gruplayacağımız kolonları içeren tablo ismi 											
+group by gruplamak istediğimiz kolonların ismi	
