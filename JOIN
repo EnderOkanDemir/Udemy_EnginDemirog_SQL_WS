@@ -1,28 +1,24 @@
-
-											
-											
-											
-											
 Select *							                Products tablosunda olanlar ama Order Details tablosunda olmayanları çağırdık				
 from Products as P left join [Order Details] as OD				Satılmayan  ürünleri bulmaya  çalıştık ama satılmayan ürün yok.				
 on P.ProductID = OD.ProductID							Tablolar birleştirilirken eşleşmeyenler de gelir				
-where OD.ProductID is null							Eşleşmeyenlerin devamında NULL görünecektir				
+where OD.ProductID is null							Eşleşmeyenlerin devamında NULL görünecektir	
+
 											
 Select * 											
 from Customers as C left join Orders O							Customers tablosunda olanlar ama Orders tablosunda olmayanları çağırdık				
 on C.CustomerID = O.CustomerID											
-where O.CustomerID is null							CustomerID	CompanyName	ContactName	ContactTitle	Address
-							FISSA	FISSA Fabrica Inter. Salchichas S.A.	Diego Roel	Accounting Manager	C/ Moralzarzal, 86
-							PARIS	Paris spécialités	Marie Bertrand	Owner	265, boulevard Charonne
+where O.CustomerID is null							CustomerID	CompanyName					ContactName		ContactTitle		Address
+										FISSA		FISSA Fabrica Inter. Salchichas S.A.		Diego Roel		Accounting Manager	C/ Moralzarzal, 86
+										PARIS		Paris spécialités				Marie Bertrand		Owner			265, boulevard Charonne
 											
 											
 											
 Select * 											
 from Orders as O right join Customers as C							Customers tablosunda olanlar ama Orders tablosunda olmayanları çağırdık				
 on O.CustomerID = C.CustomerID											
-where O.CustomerID is null							OrderID	CustomerID	EmployeeID	OrderDate	RequiredDate
-							NULL	NULL	NULL	NULL	NULL
-							NULL	NULL	NULL	NULL	NULL
+where O.CustomerID is null							OrderID		CustomerID	EmployeeID	OrderDate	RequiredDate
+										NULL		NULL		NULL		NULL		NULL
+										NULL		NULL		NULL		NULL		NULL
 											
 											
 Select C.ContactName, C.CustomerID											
